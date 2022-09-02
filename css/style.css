@@ -1,0 +1,559 @@
+@charset "UTF-8";
+@font-face {
+  font-family: gilroy;
+  font-display: swap;
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: gilroy;
+  font-display: swap;
+  src: url("../fonts/gilroy-medium.woff2") format("woff2"), url("../fonts/gilroy-medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: gilroy;
+  font-display: swap;
+  src: url("../fonts/gilroy-regular.woff2") format("woff2"), url("../fonts/gilroy-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: gilroy;
+  font-display: swap;
+  src: url("../fonts/gilroy-semibold.woff2") format("woff2"), url("../fonts/gilroy-semibold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  padding: 0px;
+  margin: 0px;
+  border: 0px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  min-width: 320px;
+}
+
+body {
+  color: #ffffff;
+  line-height: 1;
+  font-family: "gilroy";
+  font-size: 1rem;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+input,
+button,
+textarea {
+  font-family: "gilroy";
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  background-color: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.lock body {
+  overflow: hidden;
+  touch-action: none;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.wrapper > main {
+  flex: 1 1 auto;
+}
+.wrapper > * {
+  min-width: 0;
+}
+
+/*
+(i) Стили будут применяться ко 
+всем классам содержащим *__container
+Например header__container, main__container и т.д.
+Снипет (HTML): cnt
+*/
+[class*=-ibg] {
+  position: relative;
+}
+[class*=-ibg] video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+[class*=-ibg_contain] img {
+  object-fit: contain;
+}
+
+/*
+.icon-menu {
+	display: none;
+	@media (max-width: $mobile) {
+		display: block;
+		position: relative;
+		width: rem(30);
+		height: rem(18);
+		cursor: pointer;
+		z-index: 5;
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			right: 0;
+			position: absolute;
+			width: 100%;
+			height: rem(2);
+			background-color: #000;
+		}
+		&::before {
+			top: 0;
+		}
+		&::after {
+			bottom: 0;
+		}
+		span {
+			top: calc(50% - rem(1));
+		}
+		.menu-open & {
+			span {
+				width: 0;
+			}
+			&::before,
+			&::after {
+			}
+			&::before {
+				top: calc(50% - rem(1));
+				transform: rotate(-45deg);
+			}
+			&::after {
+				bottom: calc(50% - rem(1));
+				transform: rotate(45deg);
+			}
+		}
+	}
+}
+*/
+.bankruptcy__body {
+  position: relative;
+}
+.bankruptcy__bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  max-width: 1080px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+.bankruptcy__bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 52.08%, rgba(0, 0, 0, 0) 100%);
+  transform: rotate(90deg);
+  width: 1192px;
+  height: 1080px;
+}
+@media (max-width: 61.99875em) {
+  .bankruptcy__bg::after {
+    transform: rotate(0deg);
+    width: 100%;
+    height: 100%;
+  }
+}
+.bankruptcy__video-ibg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.bankruptcy__content {
+  margin-left: auto;
+  max-width: 778px;
+  margin-right: 105px;
+  padding-top: 155px;
+  padding-bottom: 54px;
+}
+@media (max-width: 61.99875em) {
+  .bankruptcy__content {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 100px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .bankruptcy__content {
+    padding-top: 60px;
+  }
+}
+.bankruptcy__title {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 58px;
+  margin-bottom: 44px;
+}
+@media (max-width: 61.99875em) {
+  .bankruptcy__title {
+    font-size: 42px;
+  }
+}
+@media (max-width: 47.99875em) {
+  .bankruptcy__title {
+    font-size: 36px;
+  }
+}
+.bankruptcy__text {
+  max-width: 427px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 27px;
+}
+.bankruptcy__link {
+  margin-bottom: 46px;
+}
+.bankruptcy__link span {
+  font-weight: 400;
+  line-height: 19px;
+  color: #9c9999;
+}
+.bankruptcy__link a {
+  color: #d90e0e;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .bankruptcy__link a:hover {
+    text-decoration: underline;
+  }
+}
+.bankruptcy__button {
+  max-width: 270px;
+  margin-bottom: 58px;
+}
+.bankruptcy__button button {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 18px 30px;
+  background: #d90e0e;
+  border-radius: 40px;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .bankruptcy__button button:hover {
+    background: #ac0606;
+  }
+}
+@media (max-width: 450px) {
+  .bankruptcy__button {
+    margin: 0 auto;
+    margin-bottom: 58px;
+  }
+}
+.bankruptcy__cards {
+  display: flex;
+  margin: 0 -10px;
+  margin-top: -15px;
+  margin-bottom: 46px;
+}
+@media (max-width: 47.99875em) {
+  .bankruptcy__cards {
+    flex-wrap: wrap;
+  }
+}
+.bankruptcy__item {
+  flex: 1 1 30%;
+  padding: 0 10px;
+  padding-top: 15px;
+}
+@media (max-width: 650px) {
+  .bankruptcy__item {
+    flex: 1 1 50%;
+  }
+}
+@media (max-width: 450px) {
+  .bankruptcy__item {
+    flex: 1 1 100%;
+  }
+}
+.bankruptcy__elem {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.bankruptcy__name {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #0e78d9;
+  margin-bottom: 16px;
+  position: relative;
+}
+.bankruptcy__name::after {
+  content: "";
+  position: absolute;
+  top: 30px;
+  left: 0px;
+  background: #d90e0e;
+  width: 100%;
+  height: 2px;
+}
+.bankruptcy__cards-text {
+  padding-top: auto;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 21px;
+  color: #333333;
+}
+.bankruptcy__label {
+  font-weight: 400;
+  line-height: 19px;
+  margin-bottom: 15px;
+}
+.bankruptcy__box {
+  display: flex;
+  margin-bottom: 65px;
+}
+@media (max-width: 47.99875em) {
+  .bankruptcy__box {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 600px) {
+  .bankruptcy__box {
+    display: block;
+  }
+}
+.bankruptcy__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 725px) {
+  .bankruptcy__footer {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.bankruptcy__logo {
+  flex: 0 1 230px;
+  margin-right: 10px;
+}
+.bankruptcy__logo img {
+  max-width: 100%;
+}
+@media (max-width: 725px) {
+  .bankruptcy__logo {
+    order: 1;
+    margin-right: 0;
+    margin-top: 25px;
+  }
+}
+.bankruptcy__number {
+  margin-right: 10px;
+}
+@media (max-width: 725px) {
+  .bankruptcy__number {
+    margin-right: 35px;
+  }
+}
+@media (max-width: 520px) {
+  .bankruptcy__number {
+    margin-right: 0;
+    flex: 1 1 100%;
+  }
+}
+.bankruptcy__number img {
+  width: 17px;
+  height: 17px;
+  margin-right: 12px;
+}
+.bankruptcy__number a {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .bankruptcy__number a:hover {
+    text-decoration: underline;
+  }
+}
+.bankruptcy__mail {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 520px) {
+  .bankruptcy__mail {
+    margin-top: 15px;
+    flex: 1 1 100%;
+  }
+}
+.bankruptcy__mail img {
+  width: 18px;
+  height: 18px;
+  margin-right: 11px;
+}
+.bankruptcy__mail a {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .bankruptcy__mail a:hover {
+    text-decoration: underline;
+  }
+}
+.bankruptcy__centr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 520px) {
+  .bankruptcy__centr {
+    margin: 0 auto;
+  }
+}
+
+.button-style {
+  padding: 20px 23px;
+  background: linear-gradient(161.15deg, #0e78d9 12.73%, #3dafff 72.95%);
+  box-shadow: 0px 17px 47px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  font-weight: 400;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.button-style img {
+  margin-right: 13px;
+  position: relative;
+  z-index: 2;
+}
+.button-style span {
+  position: relative;
+  z-index: 2;
+}
+.button-style::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #aab3ad;
+  background: linear-gradient(90deg, rgba(170, 179, 173, 0.1) 0%, rgba(102, 116, 93, 0.1) 35%, rgba(182, 182, 182, 0.1) 100%);
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .button-style:hover::after {
+    left: 0;
+  }
+}
+
+.bankruptcy__buttons {
+  position: relative;
+  max-width: 270px;
+  width: 100%;
+  margin-right: 27px;
+}
+.bankruptcy__buttons:last-child {
+  margin-right: 0;
+}
+@media (max-width: 600px) {
+  .bankruptcy__buttons {
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .bankruptcy__buttons:last-child {
+    margin: 0 auto;
+  }
+}
+
+.img-m {
+  position: absolute;
+  top: -12px;
+  right: 7px;
+  width: 26px;
+  height: 26px;
+  z-index: 2;
+}
